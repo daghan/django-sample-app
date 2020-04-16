@@ -9,4 +9,4 @@ jobs:
       - checkout
       - run:
           name: "Run sgrep"
-          command: sgrep-lint --error --json --config=https://sgrep.live/c/r/r2c.python 1>&2; echo "done"
+          command: sgrep-lint --error --config=https://sgrep.live/c/r/r2c.python 1>&2; echo "done"
