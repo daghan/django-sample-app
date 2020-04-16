@@ -6,6 +6,7 @@ jobs:
       - image: cimg/base:2020.01
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: "Pull docker image"
           command: docker pull returntocorp/sgrep:develop
