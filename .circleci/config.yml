@@ -6,7 +6,7 @@ jobs:
       - image: returntocorp/sgrep:develop
     working_directory: /home/repo
     steps:
-      - run: "apk install git"
+      - run: apk add git
       - checkout
       - run: ls -la
       - run:
