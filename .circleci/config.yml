@@ -12,4 +12,7 @@ jobs:
           command: docker pull returntocorp/sgrep:develop
       - run:
           name: "Run sgrep"
-          command: docker run --rm -v "${PWD}:/home/repo" returntocorp/sgrep:develop --config=https://sgrep.live/c/r/r2c.python
+          command: |
+            echo "running docker on directory ${PWD}";  
+            docker run --rm -v "${PWD}:/home/repo" returntocorp/sgrep:develop --config=https://sgrep.live/c/r/r2c.python; 
+            echo "done"
