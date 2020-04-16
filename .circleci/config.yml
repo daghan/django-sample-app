@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: "Run sgrep"
-          # blocking
+          # blocking (--error)
           # command: sgrep-lint --error --config=https://sgrep.live/c/r/r2c.python 1>&2; echo "done"
           # non-blocking
-          command: sgrep-lint --config=https://sgrep.live/c/r/r2c.python 1>&2; echo "done"
+          command: sgrep-lint --config=https://sgrep.live/c/r/r2c.python.django 1>&2; echo "done"
