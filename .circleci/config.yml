@@ -6,6 +6,7 @@ jobs:
       - image: returntocorp/sgrep:develop
     working_directory: /home/repo
     steps:
+      - checkout
       - run:
           name: "Run sgrep"
           command: sgrep-lint --config=https://sgrep.live/c/r/r2c.python; 
