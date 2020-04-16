@@ -3,16 +3,12 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/base:2020.01
+      - image: returntocorp/sgrep:develop
+    working_directory: /home/repo
     steps:
+      - run: "sudo apk install git"
       - checkout
-      - setup_remote_docker
-      - run:
-          name: "Pull docker image"
-          command: docker pull returntocorp/sgrep:develop
+      - run: ls -la
       - run:
           name: "Run sgrep"
-          command: |
-            echo "running docker on directory ${PWD}";  
-            docker run --rm -v "${PWD}:/home/repo" returntocorp/sgrep:develop --config=https://sgrep.live/c/r/r2c.python; 
-            echo "done"
+          command: sgrep-lint --config=https://sgrep.live/c/r/r2c.python; 
